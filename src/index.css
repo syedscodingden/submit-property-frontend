@@ -13,3 +13,18 @@ code {
     monospace;
 }
 
+::-webkit-scrollbar {
+  width: 0.3em;
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f9f9;
+  border-radius: 0px 10px 10px 0px;
+  margin-block: 0.2em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00308f;
+  border-radius: 0px 10px 10px 0px;
+  border: 0.1em solid #c0c0c0;
+}

@@ -27,7 +27,7 @@
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("../../assets/dummy2.jpg");
+    url("../../assets/step1img.jpg");
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: cover 10px;
@@ -35,6 +35,9 @@
 
 .content {
   font-weight: 600;
+  overflow: auto;
+  height: 490px;
+  overflow-x: hidden;
 }
 
 .actions {
@@ -43,10 +46,26 @@
   justify-content: flex-end;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 319px) {
   .modal {
-    left: calc(50% - 30rem);
-    width: 60rem;
+    left: calc(15% - 2rem);
+    width: 16rem;
+  }
+  .formBackground {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.7)
+      ),
+      url("../../assets/dummy.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: cover 10px;
+  }
+  .content {
+    font-weight: 600;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 340px;
   }
 }
 
@@ -60,29 +79,64 @@
         rgba(255, 255, 255, 0.6),
         rgba(255, 255, 255, 0.7)
       ),
-      url("../../assets/dummy2.jpg");
+      url("../../assets/dummy4.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: cover 10px;
+  }
+  .content {
+    font-weight: 600;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 450px;
   }
 }
 
 @media (min-width: 481px) and (max-width: 1200px) {
   .modal {
-    left: calc(50% - 10rem);
-    width: 20rem;
+    left: calc(38% - 10rem);
+    width: 30rem;
+    height: 480px;
   }
   .formBackground {
     background-image: linear-gradient(
         rgba(255, 255, 255, 0.6),
         rgba(255, 255, 255, 0.7)
       ),
-      url("../../assets/dummy3.jpg");
+      url("../../assets/dummy2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+  }
+  .content {
+    color: black;
+    font-weight: 600;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 480px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .modal {
+    left: calc(20% - 10rem);
+    width: 65rem;
+  }
+  .formBackground {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.7)
+      ),
+      url("../../assets/step1img.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: cover;
   }
   .content {
     color: black;
+    font-weight: 600;
+    overflow: auto;
+    height: 525px;
+    overflow-x: hidden;
   }
 }
