@@ -1,0 +1,88 @@
+.modal {
+  position: fixed;
+  top: 15vh;
+  left: 5%;
+  width: 200%;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.header {
+  background: #89cff0;
+  height: 0.2rem;
+}
+
+.complete {
+  background: #00308f;
+  height: 0.2rem;
+}
+
+.header h2 {
+  margin: 0;
+  color: white;
+}
+
+.formBackground {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("../../assets/dummy2.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: cover 10px;
+}
+
+.content {
+  font-weight: 600;
+}
+
+.actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .modal {
+    left: calc(50% - 30rem);
+    width: 60rem;
+  }
+}
+
+@media (min-width: 319px) and (max-width: 480px) {
+  .modal {
+    left: calc(50% - 10rem);
+    width: 20rem;
+  }
+  .formBackground {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.7)
+      ),
+      url("../../assets/dummy2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: cover 10px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+  .modal {
+    left: calc(50% - 10rem);
+    width: 20rem;
+  }
+  .formBackground {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.6),
+        rgba(255, 255, 255, 0.7)
+      ),
+      url("../../assets/dummy3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: cover;
+  }
+  .content {
+    color: black;
+  }
+}
