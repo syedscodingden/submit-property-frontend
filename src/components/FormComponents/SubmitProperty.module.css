@@ -63,6 +63,14 @@
     background-position: cover 10px;
     background-attachment: fixed;
   }
+
+  .common {
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 14rem;
+  }
   .content {
     font-weight: 600;
     overflow: auto;
@@ -87,11 +95,18 @@
     background-position: cover 10px;
     background-attachment: fixed;
   }
+  .common {
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 18rem;
+  }
   .content {
     font-weight: 600;
     overflow: auto;
     overflow-x: hidden;
-    height: 450px;
+    height: 350px;
   }
 }
 
@@ -111,6 +126,13 @@
     background-size: 100%;
     background-position: center;
     background-attachment: fixed;
+  }
+  .common {
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 28rem;
   }
   .content {
     color: black;
@@ -155,5 +177,6 @@
     overflow: auto;
     height: 480px;
     overflow-x: hidden;
+    padding: 1.5rem;
   }
 }
