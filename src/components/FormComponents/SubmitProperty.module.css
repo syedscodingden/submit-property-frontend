@@ -31,14 +31,15 @@
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: cover 10px;
+  background-attachment: fixed;
 }
-
+/* 
 .content {
   font-weight: 600;
   overflow: auto;
   height: 490px;
   overflow-x: hidden;
-}
+} */
 
 .actions {
   padding: 1rem;
@@ -60,6 +61,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: cover 10px;
+    background-attachment: fixed;
   }
   .content {
     font-weight: 600;
@@ -83,6 +85,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: cover 10px;
+    background-attachment: fixed;
   }
   .content {
     font-weight: 600;
@@ -107,6 +110,7 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
+    background-attachment: fixed;
   }
   .content {
     color: black;
@@ -131,12 +135,25 @@
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: cover;
+    background-attachment: fixed;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .common {
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 63rem;
   }
   .content {
     color: black;
     font-weight: 600;
     overflow: auto;
-    height: 525px;
+    height: 480px;
     overflow-x: hidden;
   }
 }
