@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Card from "../../UI/Card";
 import classes from "./SubmitProperty.module.css";
+import SelectCity from "./Steps/SelectCity/SelectCity";
 
 const SubmitPropertyForm = (props) => {
   const [data, setData] = useState({
@@ -10,12 +11,17 @@ const SubmitPropertyForm = (props) => {
     numberOfBedrooms: 2,
     firstName: "",
     lastName: "",
-    countryCode: 965,
-    mobileNumber: 50123123,
+    countryCode: 0,
+    mobileNumber: 0,
     email: "",
   });
 
+  const [currentStep, setCurrentStep] = useState(0);
+
+  const steps = [<SelectCity /> ]
+
   let fill = (2 / 5) * 100;
+  
 
   return (
     <Card className={classes.modal}>
@@ -42,23 +48,7 @@ const SubmitPropertyForm = (props) => {
           </div>
         </div>
         <div className={classes.content}>
-          <div>{props.message}</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
-          <div>Hello</div>
+          {steps[currentStep]}
         </div>
       </div>
       {/* <footer className={classes.actions}></footer> */}
