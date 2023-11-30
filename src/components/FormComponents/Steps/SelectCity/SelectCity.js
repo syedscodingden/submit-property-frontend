@@ -3,7 +3,7 @@ import { Formik, Form, Field } from "formik";
 import classes from "./SelectCity.module.css";
 import Button from "@mui/material/Button";
 
-export default function SelectCity() {
+export default function SelectCity(props) {
   const radioOptions = [
     { key: "Option 1", value: "Dubai" },
     { key: "Option 2", value: "Sharjah" },
@@ -21,15 +21,19 @@ export default function SelectCity() {
     { key: "Option 14", value: "Kalba" },
   ];
 
+  const handleSubmit = (values) => {
+    let selectedCity = values.picked;
+    props.next({ ...props.data, city: selectedCity });
+  };
+
   return (
     <Formik
-      initialValues={{
-        picked: "",
-      }}
-      onSubmit={async (values) => {
-        await new Promise((r) => setTimeout(r, 500));
-        alert(JSON.stringify(values, null, 2));
-      }}
+      initialValues={props.data}
+      // onSubmit={async (values) => {
+      //   await new Promise((r) => setTimeout(r, 500));
+      //   alert(JSON.stringify(values, null, 2));
+      // }}
+      onSubmit={handleSubmit}
     >
       {({ values }) => (
         <Form className={classes.selectCity}>
@@ -53,7 +57,11 @@ export default function SelectCity() {
             <Button
               variant="contained"
               type="submit"
-              sx={{ backgroundColor: "#0A2351" }}
+              sx={{
+                backgroundColor: "#0A2351",
+                textTransform: "capitalize",
+                ":hover": { backgroundColor: "#5D76A9" },
+              }}
             >
               Next
             </Button>

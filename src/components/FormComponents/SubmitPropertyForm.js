@@ -18,10 +18,19 @@ const SubmitPropertyForm = (props) => {
 
   const [currentStep, setCurrentStep] = useState(0);
 
-  const steps = [<SelectCity /> ]
+  const handleNextStep = (newData) => {
+    setData((prev) => ({ ...prev, ...newData }));
+    setCurrentStep((prev) => prev + 1);
+  };
 
-  let fill = (2 / 5) * 100;
-  
+  const handlePrevStep = (newData) => {
+    setData((prev) => ({ ...prev, ...newData }));
+    setCurrentStep((prev) => prev - 1);
+  };
+
+  const steps = [<SelectCity next={handleNextStep} data={data} />];
+
+  let fill = ((currentStep + 1) / 5) * 100;
 
   return (
     <Card className={classes.modal}>
@@ -47,9 +56,7 @@ const SubmitPropertyForm = (props) => {
             </svg>
           </div>
         </div>
-        <div className={classes.content}>
-          {steps[currentStep]}
-        </div>
+        <div className={classes.content}>{steps[currentStep]}</div>
       </div>
       {/* <footer className={classes.actions}></footer> */}
     </Card>
