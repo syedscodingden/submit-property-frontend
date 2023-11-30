@@ -54,7 +54,7 @@ const SubmitPropertyForm = (props) => {
   return (
     <Card className={classes.modal}>
       <header className={classes.header}>
-        <div className={classes.complete} style={{ width: `${fill}%` }}></div>
+        <div className={classes.complete} style={{ width: `${fill}%`, transition: "width 0.9s" }}></div>
       </header>
       <div className={classes.formBackground}>
         <div className={classes.common}>
