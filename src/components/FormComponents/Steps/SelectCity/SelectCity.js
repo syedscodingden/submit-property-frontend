@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import classes from "./SelectCity.module.css";
 import Button from "@mui/material/Button";
@@ -28,7 +28,7 @@ export default function SelectCity(props) {
 
   return (
     <Formik
-      initialValues={props.data}
+      initialValues={{ ...props.data, picked: props.data.city }}
       // onSubmit={async (values) => {
       //   await new Promise((r) => setTimeout(r, 500));
       //   alert(JSON.stringify(values, null, 2));
@@ -45,15 +45,17 @@ export default function SelectCity(props) {
             aria-labelledby="my-radio-group"
             className={classes.radioGroup}
           >
-            {radioOptions.map((roption) => (
-              <label key={roption.key} className={classes.radioButton}>
-                <Field type="radio" name="picked" value={roption.value} />
-                {roption.value}
-              </label>
-            ))}
-            <div>Picked: {values.picked}</div>
+            {radioOptions.map((roption) => {
+              return (
+                <label key={roption.key} className={classes.radioButton}>
+                  <Field type="radio" name="picked" value={roption.value} />
+                  {roption.value}
+                </label>
+              );
+            })}
+            {/* <div>Picked: {values.picked}</div> */}
           </div>
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <div className={classes.buttonContainer}>
             <Button
               variant="contained"
               type="submit"

@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import Card from "../../UI/Card";
 import classes from "./SubmitProperty.module.css";
 import SelectCity from "./Steps/SelectCity/SelectCity";
+import SelectNeighborhood from "./Steps/SelectNeighborhood/SelectNeighborhood";
 
 const SubmitPropertyForm = (props) => {
   const [data, setData] = useState({
     city: "",
     area: "",
     fullAddress: "",
-    numberOfBedrooms: 2,
+    numberOfBedrooms: 0,
     firstName: "",
     lastName: "",
     countryCode: 0,
@@ -18,17 +19,35 @@ const SubmitPropertyForm = (props) => {
 
   const [currentStep, setCurrentStep] = useState(0);
 
-  const handleNextStep = (newData) => {
+  const makeApiRequest = (formData) => {
+    console.log("Form Submitted", formData);
+  };
+
+  const handleNextStep = (newData, final = false) => {
     setData((prev) => ({ ...prev, ...newData }));
+
+    if (final) {
+      makeApiRequest(newData);
+      return;
+    }
+
     setCurrentStep((prev) => prev + 1);
   };
 
   const handlePrevStep = (newData) => {
     setData((prev) => ({ ...prev, ...newData }));
+
     setCurrentStep((prev) => prev - 1);
   };
 
-  const steps = [<SelectCity next={handleNextStep} data={data} />];
+  const steps = [
+    <SelectCity next={handleNextStep} data={data} />,
+    <SelectNeighborhood
+      next={handleNextStep}
+      prev={handlePrevStep}
+      data={data}
+    />,
+  ];
 
   let fill = ((currentStep + 1) / 5) * 100;
 
