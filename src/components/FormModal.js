@@ -1,20 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./FormModal.module.css";
 import ReactDOM from "react-dom";
 import SubmitPropertyForm from "./FormComponents/SubmitPropertyForm";
 
 const Backdrop = (props) => {
-  return <div className={classes.backdrop} />;
+  return <div className={classes.backdrop} onClick={() => props.showModal()} />;
 };
 
-const FormModal = () => {
+const FormModal = (props) => {
   return (
     <React.Fragment>
-      {ReactDOM.createPortal(<Backdrop />, document.getElementById("backdrop"))}
-      {ReactDOM.createPortal(
-        <SubmitPropertyForm title={"Hello"} message={"Message"} />,
-        document.getElementById("submit-property-modal")
-      )}
+      {props.isShowing &&
+        ReactDOM.createPortal(
+          <Backdrop showModal={props.showModal} />,
+          document.getElementById("backdrop")
+        )}
+      {props.isShowing &&
+        ReactDOM.createPortal(
+          <SubmitPropertyForm showModal={props.showModal} />,
+          document.getElementById("submit-property-modal")
+        )}
     </React.Fragment>
   );
 };

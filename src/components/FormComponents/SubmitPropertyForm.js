@@ -131,7 +131,7 @@ const SubmitPropertyForm = (props) => {
           <div>
             <span>Logo</span>
           </div>
-          <div>
+          <div onClick={() => props.showModal()} style={{ cursor: "pointer" }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="20"

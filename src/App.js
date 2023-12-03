@@ -5,12 +5,12 @@ function App() {
   const [showFormModal, setShowFormModal] = useState(false);
 
   const formModalDisplayHandler = () => {
-    setShowFormModal(true);
+    setShowFormModal(!showFormModal);
   };
 
   return (
     <div>
-      {showFormModal && <FormModal />}
+      {showFormModal && <FormModal isShowing={showFormModal} showModal={formModalDisplayHandler} />}
       <button onClick={formModalDisplayHandler}>Submit Property</button>
     </div>
   );
