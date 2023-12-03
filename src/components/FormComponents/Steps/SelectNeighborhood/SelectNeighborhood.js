@@ -19,12 +19,19 @@ const SelectNeighborhood = (props) => {
   const [selectedNeighborhood, setSelectedNeighborhood] = useState(
     props.data.area
   );
+
+  const [error, setError] = useState(false);
+
   const handleSubmit = () => {
-    props.next({ ...props.data, area: selectedNeighborhood }, true);
+    if (selectedNeighborhood === "") {
+      setError(true);
+      return;
+    }
+    props.next({ ...props.data, area: selectedNeighborhood });
   };
 
   const handleSelectNeighborhood = (selected) => {
-    console.log(selected);
+    setError(false);
     setSelectedNeighborhood(selected);
   };
 
@@ -52,6 +59,9 @@ const SelectNeighborhood = (props) => {
               );
             })}
           </div>
+          {error && (
+            <p className={classes.error}>Please select no of bedrooms</p>
+          )}
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
             <Button
               variant="contained"

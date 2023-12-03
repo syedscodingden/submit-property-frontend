@@ -1,0 +1,316 @@
+.selectRooms {
+  /* border: 2px solid black; */
+  padding-left: 3rem;
+  padding-top: 2rem;
+  padding-right: 4rem;
+  padding-bottom: 4rem;
+}
+
+.roomTitle {
+  margin-bottom: 20px;
+  color: #002244;
+}
+
+.roomOptionsGroup {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+  overflow: auto;
+  overflow-x: hidden;
+  max-height: 300px;
+  border-radius: 10px;
+  background: rgb(204, 204, 204);
+  background: rgba(255, 255, 255, 0.5);
+  padding: 1rem;
+}
+
+.roomOption {
+  margin: 0.5rem;
+  color: #002244;
+  border: 1px solid #002244;
+  max-width: 12rem;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.selectedRoomOption {
+  margin: 0.5rem;
+  color: #002244;
+  border: 2.5px solid #002244;
+  max-width: 12rem;
+  height: 2rem;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.selectedCheck {
+  margin-right: 1rem;
+  margin-top: 0.1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 319px) {
+  .selectRooms {
+    /* border: 2px solid black; */
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-right: 1rem;
+  }
+
+  .roomTitle {
+    margin-bottom: 20px;
+    color: #002244;
+  }
+
+  .roomOptionsGroup {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 300px;
+    border-radius: 10px;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .roomOption {
+    margin: 0.5rem;
+    color: #002244;
+    border: 1px solid #002244;
+    max-width: 12rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 5px;
+  }
+
+  .selectedRoomOption {
+    margin: 0.5rem;
+    color: #002244;
+    border: 2.5px solid #002244;
+    max-width: 12rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 5px;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  .error {
+    padding-left: 0.5em;
+    color: #ba0021;
+  }
+}
+
+@media (min-width: 319px) and (max-width: 480px) {
+  .selectRooms {
+    /* border: 2px solid black; */
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-right: 4rem;
+  }
+
+  .roomTitle {
+    margin-bottom: 20px;
+    color: #002244;
+  }
+
+  .roomOptionsGroup {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 300px;
+    border-radius: 10px;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .roomOption {
+    margin: 0.5rem;
+    color: #002244;
+    border: 1px solid #002244;
+    max-width: 12rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 5px;
+  }
+
+  .selectedRoomOption {
+    margin: 0.5rem;
+    color: #002244;
+    border: 2.5px solid #002244;
+    max-width: 12rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 5px;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  .error {
+    padding-left: 0.5em;
+    color: #ba0021;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+  .selectRooms {
+    padding-left: 3rem;
+    padding-top: 2rem;
+    padding-right: 4rem;
+  }
+
+  .roomTitle {
+    margin-bottom: 20px;
+    color: #002244;
+  }
+
+  .roomOptionsGroup {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 250px;
+    border-radius: 10px;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .roomOption {
+    margin: 0.5rem;
+    color: #002244;
+    border: 1px solid #002244;
+    max-width: 12rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 5px;
+  }
+
+  .selectedRoomOption {
+    margin: 0.5rem;
+    color: #002244;
+    border: 2.5px solid #002244;
+    max-width: 12rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 5px;
+  }
+
+  .error {
+    padding-left: 0.5em;
+    margin-top: -10px;
+    color: #ba0021;
+  }
+}
+
+@media (min-width: 1201px) {
+  .selectRooms {
+    /* border: 2px solid black; */
+    padding-left: 3rem;
+    padding-top: 2rem;
+    padding-right: 4rem;
+    padding-bottom: 0;
+  }
+
+  .roomTitle {
+    margin-bottom: 20px;
+    color: #002244;
+  }
+
+  .roomOptionsGroup {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 270px;
+    border-radius: 10px;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+  }
+
+  .roomOption {
+    margin: 0.5rem;
+    color: #002244;
+    border: 1px solid #002244;
+    max-width: 12rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .selectedRoomOption {
+    margin: 0.5rem;
+    color: #002244;
+    border: 2.5px solid #002244;
+    max-width: 12rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .error {
+    padding-left: 0.5em;
+    margin-top: 5px;
+    color: #ba0021;
+  }
+}

@@ -1,26 +1,46 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import Card from "../../UI/Card";
 import classes from "./SubmitProperty.module.css";
 import SelectCity from "./Steps/SelectCity/SelectCity";
 import SelectNeighborhood from "./Steps/SelectNeighborhood/SelectNeighborhood";
+import images from "../../assets/imageMap";
+import PropertyAddress from "./Steps/PropertyAddress/PropertyAddress";
+import SelectRooms from "./Steps/SelectRooms/SelectRooms";
+import PersonalDetails from "./Steps/PersonalDetails/PersonalDetails";
 
 const SubmitPropertyForm = (props) => {
   const [data, setData] = useState({
     city: "",
     area: "",
     fullAddress: "",
-    numberOfBedrooms: 0,
+    typeOfApartment: "",
     firstName: "",
     lastName: "",
-    countryCode: 0,
-    mobileNumber: 0,
+    countryCode: "",
+    phoneNumber: "",
     email: "",
   });
 
+  const imageSpecificData = {
+    Dubai: {
+      mobile: images.dubaiMobile,
+      desktop: images.dubaiDesktop,
+      tab: images.dubaiTab,
+    },
+    Sharjah: {
+      mobile: images.sharjahMobile,
+      desktop: images.sharjahDesktop,
+      tab: images.sharjahMobile,
+    },
+  };
+
   const [currentStep, setCurrentStep] = useState(0);
+  const [currentBackgroundImage, setCurrentBackgroundImage] = useState("");
+  const [windowWidth, setWindowWidth] = useState(1500);
+  const [currentCity, setCurrentCity] = useState("Dubai");
 
   const makeApiRequest = (formData) => {
-    console.log("Form Submitted", formData);
+    console.log("Form Submitted", formData); //backend request
   };
 
   const handleNextStep = (newData, final = false) => {
@@ -36,27 +56,77 @@ const SubmitPropertyForm = (props) => {
 
   const handlePrevStep = (newData) => {
     setData((prev) => ({ ...prev, ...newData }));
-
     setCurrentStep((prev) => prev - 1);
   };
 
+  const handleBackgroundImageChange = (option) => {
+    setCurrentCity(option);
+  };
+
+  const handleCityBackgroundChange = () => {
+    if (windowWidth <= 319 || (windowWidth > 319 && windowWidth <= 480)) {
+      setCurrentBackgroundImage(imageSpecificData[currentCity].mobile);
+    } else if (windowWidth > 480 && windowWidth <= 1200) {
+      setCurrentBackgroundImage(imageSpecificData[currentCity].tab);
+    } else {
+      setCurrentBackgroundImage(imageSpecificData[currentCity].desktop);
+    }
+  };
+  useLayoutEffect(() => {
+    function updateSize() {
+      setWindowWidth(window.innerWidth);
+      handleCityBackgroundChange();
+    }
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
+  }, [windowWidth, currentCity]);
+
   const steps = [
-    <SelectCity next={handleNextStep} data={data} />,
+    <SelectCity
+      next={handleNextStep}
+      data={data}
+      backgroundImageChange={handleBackgroundImageChange}
+    />,
     <SelectNeighborhood
       next={handleNextStep}
       prev={handlePrevStep}
       data={data}
     />,
+    <PropertyAddress next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <SelectRooms next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <PersonalDetails next={handleNextStep} prev={handlePrevStep} data={data} />,
   ];
 
   let fill = ((currentStep + 1) / 5) * 100;
 
+  let imageURL = "../../assets/dubaiTest.jpg";
+
   return (
     <Card className={classes.modal}>
       <header className={classes.header}>
-        <div className={classes.complete} style={{ width: `${fill}%`, transition: "width 0.9s" }}></div>
+        <div
+          className={classes.complete}
+          style={{ width: `${fill}%`, transition: "width 0.9s" }}
+        ></div>
       </header>
-      <div className={classes.formBackground}>
+      <div
+        style={{
+          backgroundImage: `linear-gradient(
+          rgba(255, 255, 255, 0.5),
+          rgba(255, 255, 255, 0.5)
+        ),
+        url(${currentBackgroundImage})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundAttachment: "fixed",
+          objectFit: "cover",
+          objectPsition: "center",
+          opacity: 1,
+          transition: `opacity 0.4s ease-in-out`,
+        }}
+      >
         <div className={classes.common}>
           <div>
             <span>Logo</span>
@@ -77,7 +147,6 @@ const SubmitPropertyForm = (props) => {
         </div>
         <div className={classes.content}>{steps[currentStep]}</div>
       </div>
-      {/* <footer className={classes.actions}></footer> */}
     </Card>
   );
 };

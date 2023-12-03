@@ -21,18 +21,25 @@ export default function SelectCity(props) {
     { key: "Option 14", value: "Kalba" },
   ];
 
+  const [error, setError] = useState(false);
+
   const handleSubmit = (values) => {
+    if (values.picked === "") {
+      setError(true);
+      return;
+    }
     let selectedCity = values.picked;
     props.next({ ...props.data, city: selectedCity });
+  };
+
+  const handleOptionChange = (option) => {
+    setError(false);
+    props.backgroundImageChange(option);
   };
 
   return (
     <Formik
       initialValues={{ ...props.data, picked: props.data.city }}
-      // onSubmit={async (values) => {
-      //   await new Promise((r) => setTimeout(r, 500));
-      //   alert(JSON.stringify(values, null, 2));
-      // }}
       onSubmit={handleSubmit}
     >
       {({ values }) => (
@@ -47,7 +54,13 @@ export default function SelectCity(props) {
           >
             {radioOptions.map((roption) => {
               return (
-                <label key={roption.key} className={classes.radioButton}>
+                <label
+                  key={roption.key}
+                  className={classes.radioButton}
+                  onChange={(e) => {
+                    handleOptionChange(e.target.value);
+                  }}
+                >
                   <Field type="radio" name="picked" value={roption.value} />
                   {roption.value}
                 </label>
@@ -55,6 +68,9 @@ export default function SelectCity(props) {
             })}
             {/* <div>Picked: {values.picked}</div> */}
           </div>
+          {error && (
+            <p className={classes.error}>Please select no of bedrooms</p>
+          )}
           <div className={classes.buttonContainer}>
             <Button
               variant="contained"

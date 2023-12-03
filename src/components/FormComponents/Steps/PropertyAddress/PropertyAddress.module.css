@@ -1,0 +1,258 @@
+.inputAddress {
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background: rgb(204, 204, 204);
+  background: rgba(255, 255, 255, 0.5);
+  border: 0.5px solid white;
+  border-radius: 4px;
+  height: 2rem;
+  width: 35rem;
+  color: #002244;
+}
+
+.errorInputAddress {
+  font-size: 16px;
+  font-size: max(16px, 1em);
+  font-family: inherit;
+  padding: 0.25em 0.5em;
+  background: rgb(204, 204, 204);
+  background: rgba(255, 255, 255, 0.5);
+  border: 0.5px solid #ba0021;
+  border-radius: 4px;
+  height: 2rem;
+  width: 35rem;
+  color: #002244;
+}
+
+input[type="text"],
+input[type="password"],
+textarea,
+select {
+  outline: none;
+}
+
+.inputAddress:focus {
+  border: 1.5px solid #002244;
+}
+
+.propertyAddress {
+  /* border: 2px solid black; */
+  padding-left: 4rem;
+  padding-top: 2rem;
+  padding-right: 4rem;
+}
+
+.propertyAddressTitle {
+  margin-bottom: 20px;
+  color: #002244;
+}
+
+.addressContainer {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  overflow-x: hidden;
+  max-height: 250px;
+  border-radius: 10px;
+  /* background: rgb(204, 204, 204); */
+  /* background: rgba(255, 255, 255, 0.5); */
+  padding: 1rem;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+}
+
+.error {
+  padding-left: 0.5em;
+  margin-top: 5px;
+  color: #ba0021;
+}
+
+@media (max-width: 319px) {
+  .propertyAddress {
+    /* border: 2px solid black; */
+    padding-left: 1.5rem;
+    padding-top: 2rem;
+    padding-right: 1rem;
+  }
+
+  .propertyAddressTitle {
+    margin-bottom: 20px;
+    color: #002244;
+  }
+
+  .addressContainer {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 200px;
+    border-radius: 10px;
+    /* background: rgb(204, 204, 204); */
+    /* background: rgba(255, 255, 255, 0.5); */
+    margin-bottom: 2rem;
+    padding-left: 0rem;
+  }
+
+  .inputAddress {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid white;
+    border-radius: 4px;
+    height: 2rem;
+    width: 12rem;
+    color: #002244;
+  }
+
+  .errorInputAddress {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid #ba0021;
+    border-radius: 4px;
+    height: 2rem;
+    width: 12rem;
+    color: #002244;
+  }
+
+  .error {
+    padding-left: 0.5em;
+    margin-top: 5px;
+    color: #ba0021;
+  }
+}
+
+@media (min-width: 319px) and (max-width: 480px) {
+  .propertyAddress {
+    /* border: 2px solid black; */
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-right: 3rem;
+  }
+
+  .propertyAddressTitle {
+    margin-bottom: 20px;
+    color: #002244;
+  }
+
+  .addressContainer {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 200px;
+    border-radius: 10px;
+    /* background: rgb(204, 204, 204); */
+    /* background: rgba(255, 255, 255, 0.5); */
+    margin-bottom: 2rem;
+    padding-left: 0rem;
+  }
+
+  .inputAddress {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid white;
+    border-radius: 4px;
+    height: 2rem;
+    width: 13rem;
+    color: #002244;
+  }
+
+  .errorInputAddress {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid #ba0021;
+    border-radius: 4px;
+    height: 2rem;
+    width: 13rem;
+    color: #002244;
+  }
+
+  .error {
+    padding-left: 0.5em;
+    margin-top: 5px;
+    color: #ba0021;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1200px) {
+  .propertyAddress {
+    /* border: 2px solid black; */
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-right: 4rem;
+  }
+
+  .propertyAddressTitle {
+    margin-bottom: 20px;
+    color: #002244;
+  }
+
+  .addressContainer {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 200px;
+    border-radius: 10px;
+    /* background: rgb(204, 204, 204); */
+    /* background: rgba(255, 255, 255, 0.5); */
+    padding: 1rem;
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+  }
+
+  .inputAddress {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid white;
+    border-radius: 4px;
+    height: 2rem;
+    width: 20rem;
+    color: #002244;
+  }
+
+  .errorInputAddress {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid #ba0021;
+    border-radius: 4px;
+    height: 2rem;
+    width: 20rem;
+    color: #002244;
+  }
+
+  .error {
+    padding-left: 0.5em;
+    margin-top: 5px;
+    color: #ba0021;
+  }
+}

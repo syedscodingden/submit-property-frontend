@@ -44,6 +44,12 @@ input[type="radio"] {
   justify-content: flex-end;
 }
 
+.error {
+  padding-left: 0.5em;
+  color: #ba0021;
+  margin-top: 1px;
+}
+
 @media (max-width: 319px) {
   .selectCity {
     /* border: 2px solid black; */
@@ -89,6 +95,12 @@ input[type="radio"] {
     display: flex;
     justify-content: flex-end;
     margin-top: 10px;
+  }
+
+  .error {
+    padding-left: 0.5em;
+    color: #ba0021;
+    margin-top: 1px;
   }
 }
 
@@ -138,6 +150,12 @@ input[type="radio"] {
     justify-content: flex-end;
     margin-top: 10px;
   }
+
+  .error {
+    padding-left: 0.5em;
+    color: #ba0021;
+    margin-top: 1px;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 1200px) {
@@ -179,6 +197,12 @@ input[type="radio"] {
     width: 1em;
     height: 1em;
     border-radius: 50%;
+  }
+
+  .error {
+    padding-left: 0.5em;
+    color: #ba0021;
+    margin-top: 1px;
   }
 }
 
@@ -227,5 +251,11 @@ input[type="radio"] {
   .buttonContainer {
     display: flex;
     justify-content: flex-end;
+  }
+
+  .error {
+    padding-left: 0.5em;
+    color: #ba0021;
+    margin-top: 1px;
   }
 }

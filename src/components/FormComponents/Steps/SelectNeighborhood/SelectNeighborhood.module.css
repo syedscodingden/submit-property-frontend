@@ -50,6 +50,12 @@
   cursor: pointer;
 }
 
+.error {
+  padding-left: 3rem;
+  color: #ba0021;
+  margin-top: -20px;
+}
+
 @media (max-width: 319px) {
   .selectNeighborhood {
     /* border: 2px solid black; */
@@ -101,6 +107,12 @@
     background-color: #0a2351;
     color: #f9f9f9;
     cursor: pointer;
+  }
+
+  .error {
+    padding-left: 1rem;
+    color: #ba0021;
+    margin-top: -20px;
   }
 }
 
@@ -156,6 +168,12 @@
     color: #f9f9f9;
     cursor: pointer;
   }
+
+  .error {
+    padding-left: 1rem;
+    color: #ba0021;
+    margin-top: -20px;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 1200px) {
@@ -209,5 +227,11 @@
     background-color: #0a2351;
     color: #f9f9f9;
     cursor: pointer;
+  }
+
+  .error {
+    padding-left: 2rem;
+    color: #ba0021;
+    margin-top: -20px;
   }
 }
