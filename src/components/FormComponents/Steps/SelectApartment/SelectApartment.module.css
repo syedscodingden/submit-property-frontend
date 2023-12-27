@@ -57,7 +57,7 @@
 
 .selectedCheck {
   margin-right: 1rem;
-  padding-bottom: 0.2rem;
+  margin-top: 0.1rem;
 }
 
 .buttonContainer {
@@ -66,15 +66,15 @@
 }
 
 .inputNoOfRooms {
-  font-size: 14px;
+  font-size: 16px;
   font-size: max(16px, 1em);
   font-family: inherit;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25em 0.5em;
   background: rgb(204, 204, 204);
   background: rgba(255, 255, 255, 0.5);
   border: 0.5px solid white;
   border-radius: 4px;
-  height: 6rem;
+  height: 2rem;
   width: 12rem;
   color: #002244;
   margin: 0.5rem;
@@ -186,11 +186,10 @@ select {
     color: #002244;
     border: 1px solid #002244;
     max-width: 12rem;
-    height: 2.5rem;
+    height: 2rem;
     padding-left: 1rem;
     padding-top: 0.5rem;
     border-radius: 5px;
-    padding-bottom: 0.5rem;
   }
 
   .selectedRoomOption {
@@ -198,11 +197,10 @@ select {
     color: #002244;
     border: 2.5px solid #002244;
     max-width: 12rem;
-    height: 2.5rem;
+    height: 2rem;
     padding-left: 1rem;
     padding-top: 0.5rem;
     border-radius: 5px;
-    padding-bottom: 2rem;
   }
 
   .buttonContainer {
@@ -265,11 +263,10 @@ select {
     color: #002244;
     border: 1px solid #002244;
     max-width: 12rem;
-    height: 4rem;
+    height: 2rem;
     padding-left: 1rem;
     padding-top: 0.5rem;
     border-radius: 5px;
-    padding-bottom: 0.5rem;
   }
 
   .selectedRoomOption {
@@ -277,11 +274,10 @@ select {
     color: #002244;
     border: 2.5px solid #002244;
     max-width: 12rem;
-    height: 4rem;
+    height: 2rem;
     padding-left: 1rem;
     padding-top: 0.5rem;
     border-radius: 5px;
-    padding-bottom: 0.5rem;
   }
 
   .error {
@@ -324,23 +320,7 @@ select {
     color: #002244;
     border: 1px solid #002244;
     max-width: 12rem;
-    height: 5.5rem;
-    padding-left: 1rem;
-    padding-top: 0.7rem;
-    border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    cursor: pointer;
-    padding-bottom: 0.7rem;
-  }
-
-  .selectedRoomOption {
-    margin: 0.5rem;
-    color: #002244;
-    border: 2.5px solid #002244;
-    max-width: 12rem;
-    height: 6rem;
+    height: 2rem;
     padding-left: 1rem;
     padding-top: 0.5rem;
     border-radius: 5px;
@@ -348,7 +328,21 @@ select {
     flex-direction: row;
     justify-content: space-between;
     cursor: pointer;
-    padding-bottom: 0.5rem;
+  }
+
+  .selectedRoomOption {
+    margin: 0.5rem;
+    color: #002244;
+    border: 2.5px solid #002244;
+    max-width: 12rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
   }
 
   .buttonContainer {

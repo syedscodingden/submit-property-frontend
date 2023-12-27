@@ -1,0 +1,16 @@
+.toastModal {
+  border: 1px solid #18453b;
+  max-width: 22rem;
+  border-radius: 5px;
+  background-color: #00fa9a;
+  padding: 0.5rem;
+  padding-left: 0.8rem;
+  z-index: 80;
+}
+
+.toastHeading {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #18453b;
+}

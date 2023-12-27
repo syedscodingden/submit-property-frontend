@@ -7,6 +7,13 @@
   overflow: hidden;
 }
 
+.logo {
+  /* border: 2px solid blue; */
+  height: 1.7rem;
+  width: 10rem;
+  cursor: pointer;
+}
+
 .header {
   background: #89cff0;
   height: 0.2rem;

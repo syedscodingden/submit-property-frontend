@@ -1,0 +1,454 @@
+.inputPersonalDetails {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid white;
+    border-radius: 4px;
+    height: 2rem;
+    width: 35rem;
+    color: #002244;
+  }
+  
+  .errorInputPersonalDetails {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid #ba0021;
+    border-radius: 4px;
+    height: 2rem;
+    width: 35rem;
+    color: #002244;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  textarea,
+  select {
+    outline: none;
+  }
+  
+  .inputPersonalDetails:focus {
+    border: 1.5px solid #002244;
+  }
+  
+  .personalDetails {
+    /* border: 2px solid black; */
+    padding-left: 4rem;
+    padding-top: 2rem;
+    padding-right: 4rem;
+  }
+  
+  .personalDetailsTitle {
+    margin-bottom: 10px;
+    color: #002244;
+  }
+  
+  .personalDetailsContainer {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 250px;
+    border-radius: 10px;
+    padding: 1rem;
+    padding-left: 2rem;
+  }
+
+  .radioButtonsContainer {
+    /* border: 1px solid black; */
+    overflow: auto;
+    overflow-x: hidden;
+    max-height: 250px;
+    padding: 1rem;
+    padding-left: 2rem;
+  }
+  
+  .personalInfolabel {
+    padding-left: 0.5em;
+    margin-bottom: 5px;
+    color: #002244;
+  }
+  
+  .selectCountryCode {
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid white;
+    border-radius: 4px;
+    max-height: 2.4rem;
+  }
+  
+  .phoneNumberContainer {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .phoneNumber {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid white;
+    border-radius: 4px;
+    height: 2.3rem;
+    width: 21rem;
+    margin-left: 2rem;
+    color: #002244;
+  }
+  
+  .errorPhoneNumber {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background: rgb(204, 204, 204);
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.5px solid #ba0021;
+    border-radius: 4px;
+    height: 2.3rem;
+    width: 20rem;
+    margin-left: 2rem;
+  }
+  
+  .phoneNumber:focus {
+    border: 1.5px solid #002244;
+  }
+  
+  .buttonsContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .error {
+    padding-left: 0.5em;
+    margin-top: 5px;
+    color: #ba0021;
+    max-height: 0.5rem;
+    margin-bottom: 0;
+  }
+  
+  @media (max-width: 319px) {
+    .personalDetails {
+      /* border: 2px solid black; */
+      padding-left: 1.5rem;
+      padding-top: 2rem;
+      padding-right: 1rem;
+    }
+  
+    .personalDetailsTitle {
+      margin-bottom: 20px;
+      color: #002244;
+    }
+  
+    .personalDetailsContainer {
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      overflow-x: hidden;
+      max-height: 200px;
+      border-radius: 10px;
+      padding-left: 0;
+    }
+  
+    .inputPersonalDetails {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid white;
+      border-radius: 4px;
+      height: 2rem;
+      width: 12rem;
+    }
+  
+    .errorInputPersonalDetails {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid #ba0021;
+      border-radius: 4px;
+      height: 2rem;
+      width: 12rem;
+    }
+  
+    .selectCountryCode {
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid white;
+      border-radius: 4px;
+      max-height: 2.4rem;
+    }
+  
+    .phoneNumberContainer {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .phoneNumber {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid white;
+      border-radius: 4px;
+      height: 2.3rem;
+      width: 6rem;
+      margin-left: 1rem;
+      color: #002244;
+    }
+  
+    .errorPhoneNumber {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid #ba0021;
+      border-radius: 4px;
+      height: 2.3rem;
+      width: 6rem;
+      margin-left: 1rem;
+    }
+  
+    .phoneNumber:focus {
+      border: 1.5px solid #002244;
+    }
+  
+    .error {
+      padding-left: 0.5em;
+      margin-top: 5px;
+      color: #ba0021;
+    }
+  }
+  
+  @media (min-width: 319px) and (max-width: 480px) {
+    .personalDetails {
+      /* border: 2px solid black; */
+      padding-left: 2rem;
+      padding-top: 2rem;
+      padding-right: 3rem;
+    }
+  
+    .personalDetailsTitle {
+      margin-bottom: 20px;
+      color: #002244;
+    }
+  
+    .personalDetailsContainer {
+      /* border: 1px solid black; */
+      display: flex;
+      flex-direction: column;
+      overflow: auto;
+      overflow-x: hidden;
+      max-height: 200px;
+      border-radius: 10px;
+      padding-left: 1rem;
+    }
+  
+    .inputPersonalDetails {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid white;
+      border-radius: 4px;
+      height: 2rem;
+      width: 12rem;
+    }
+  
+    .errorInputPersonalDetails {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid #ba0021;
+      border-radius: 4px;
+      height: 2rem;
+      width: 12rem;
+    }
+  
+    .selectCountryCode {
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid white;
+      border-radius: 4px;
+      max-height: 2.4rem;
+    }
+  
+    .phoneNumberContainer {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .phoneNumber {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid white;
+      border-radius: 4px;
+      height: 2.3rem;
+      width: 6rem;
+      margin-left: 1rem;
+      color: #002244;
+    }
+  
+    .errorPhoneNumber {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid #ba0021;
+      border-radius: 4px;
+      height: 2.3rem;
+      width: 6rem;
+      margin-left: 1rem;
+    }
+  
+    .phoneNumber:focus {
+      border: 1.5px solid #002244;
+    }
+  
+    .error {
+      padding-left: 0.5em;
+      margin-top: 5px;
+      color: #ba0021;
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 1200px) {
+    .personalDetails {
+      /* border: 2px solid black; */
+      padding-left: 2rem;
+      padding-top: 2rem;
+      padding-right: 4rem;
+      overflow: auto;
+      overflow-x: hidden;
+      max-height: 23rem;
+    }
+  
+    .personalDetailsTitle {
+      margin-bottom: 10px;
+      color: #002244;
+    }
+  
+    .personalDetailsContainer {
+      /* border: 1px solid black; */
+      display: flex;
+      flex-direction: column;
+      max-height: 200px;
+      border-radius: 10px;
+      padding: 1rem;
+      padding-left: 2rem;
+    }
+  
+    .inputPersonalDetails {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid white;
+      border-radius: 4px;
+      height: 2rem;
+      width: 20rem;
+    }
+  
+    .errorInputPersonalDetails {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid #ba0021;
+      border-radius: 4px;
+      height: 2rem;
+      width: 20rem;
+    }
+  
+    .selectCountryCode {
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid white;
+      border-radius: 4px;
+      max-height: 2.4rem;
+    }
+  
+    .phoneNumberContainer {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .phoneNumber {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid white;
+      border-radius: 4px;
+      height: 2.3rem;
+      width: 23rem;
+      margin-left: 1rem;
+      color: #002244;
+    }
+  
+    .errorPhoneNumber {
+      font-size: 16px;
+      font-size: max(16px, 1em);
+      font-family: inherit;
+      padding: 0.25em 0.5em;
+      background: rgb(204, 204, 204);
+      background: rgba(255, 255, 255, 0.5);
+      border: 0.5px solid #ba0021;
+      border-radius: 4px;
+      height: 2.3rem;
+      width: 23rem;
+      margin-left: 1rem;
+    }
+  
+    .phoneNumber:focus {
+      border: 1.5px solid #002244;
+    }
+  
+    .buttonsContainer {
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 0.6rem;
+    }
+  
+    .error {
+      padding-left: 0.5em;
+      margin-top: 5px;
+      color: #ba0021;
+    }
+  }
+  

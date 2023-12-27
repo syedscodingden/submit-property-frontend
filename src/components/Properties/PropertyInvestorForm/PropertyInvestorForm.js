@@ -1,37 +1,24 @@
 import React, { useEffect, useState, useLayoutEffect } from "react";
-import Card from "../../UI/Card";
-import classes from "./SubmitProperty.module.css";
-import SelectCity from "./Steps/SelectCity/SelectCity";
-import SelectNeighborhood from "./Steps/SelectNeighborhood/SelectNeighborhood";
-import PropertyAddress from "./Steps/PropertyAddress/PropertyAddress";
-import SelectRooms from "./Steps/SelectRooms/SelectRooms";
-import PersonalDetails from "./Steps/PersonalDetails/PersonalDetails";
-import images from "../../assets/imageMap";
-import SelectApartment from "./Steps/SelectApartment/SelectApartment";
-import FinancialDetails from "./Steps/FinancialDetails/FinancialDetails";
+import images from "../../../assets/imageMap";
 import axios from "axios";
 
-const SubmitPropertyForm = (props) => {
+import Card from "../../../UI/Card";
+import FinancialPreferences from "../../FormComponents/InvestorFormSteps/FinancialPreferences/FinancialPreferences";
+import classes from "../../FormComponents/SubmitProperty.module.css";
+import InvestorInfo from "./Steps/InvestorInfo";
+import InvestorPreferences from "./Steps/InvestorPreferences";
+
+const PropertyInvestorForm = (props) => {
   const [data, setData] = useState({
-    city: "",
-    area: "",
-    fullAddress: "",
-    typeOfApartment: "",
-    noOfRooms: "",
     firstName: "",
     lastName: "",
     countryCode: "",
     phoneNumber: "",
     email: "",
-    pricePerSqFt: null,
-    annualizedReturn: null,
-    annualizedAppreciation: null,
-    projectGrossYield: null,
-    projectNetYield: null,
-    tokens: null,
-    tokenSymbol: "",
+    tokenSymbol: props.data.tokenSymbol,
+    noOfTokens: null,
     preferredCurrency: "",
-    typeOfFinancialReturn: "",
+    propertyId: props.data._id,
   });
 
   const imageSpecificData = {
@@ -113,10 +100,8 @@ const SubmitPropertyForm = (props) => {
   const [currentCity, setCurrentCity] = useState("Dubai");
 
   const makeApiRequest = async (formData) => {
-    console.log("Helloooo");
-    console.log(formData);
-    await axios.post("http://localhost:8000/submitProperty", { ...formData });
-    props.onSuccessfulSubmission(formData);
+    await axios.post("http://localhost:8000/submitUser", { ...formData });
+    // props.onSuccessfulSubmission();
     props.showModal();
     console.log("Form Submitted", formData); //backend request
   };
@@ -161,21 +146,8 @@ const SubmitPropertyForm = (props) => {
   }, [windowWidth, currentCity]);
 
   const steps = [
-    <SelectCity
-      next={handleNextStep}
-      data={data}
-      backgroundImageChange={handleBackgroundImageChange}
-    />,
-    <SelectNeighborhood
-      next={handleNextStep}
-      prev={handlePrevStep}
-      data={data}
-    />,
-    <PropertyAddress next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <SelectApartment next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <SelectRooms next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <PersonalDetails next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <FinancialDetails
+    <InvestorInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <InvestorPreferences
       next={handleNextStep}
       prev={handlePrevStep}
       data={data}
@@ -237,4 +209,4 @@ const SubmitPropertyForm = (props) => {
   );
 };
 
-export default SubmitPropertyForm;
+export default PropertyInvestorForm;

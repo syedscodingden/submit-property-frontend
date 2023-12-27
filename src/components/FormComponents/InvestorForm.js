@@ -5,33 +5,22 @@ import SelectCity from "./Steps/SelectCity/SelectCity";
 import SelectNeighborhood from "./Steps/SelectNeighborhood/SelectNeighborhood";
 import PropertyAddress from "./Steps/PropertyAddress/PropertyAddress";
 import SelectRooms from "./Steps/SelectRooms/SelectRooms";
-import PersonalDetails from "./Steps/PersonalDetails/PersonalDetails";
 import images from "../../assets/imageMap";
 import SelectApartment from "./Steps/SelectApartment/SelectApartment";
-import FinancialDetails from "./Steps/FinancialDetails/FinancialDetails";
 import axios from "axios";
+import PersonalInfo from "./InvestorFormSteps/PersonalInfo/PersonalInfo";
+import FinancialPreferences from "./InvestorFormSteps/FinancialPreferences/FinancialPreferences";
 
-const SubmitPropertyForm = (props) => {
+const InvestorForm = (props) => {
   const [data, setData] = useState({
-    city: "",
-    area: "",
-    fullAddress: "",
-    typeOfApartment: "",
-    noOfRooms: "",
     firstName: "",
     lastName: "",
     countryCode: "",
     phoneNumber: "",
     email: "",
-    pricePerSqFt: null,
-    annualizedReturn: null,
-    annualizedAppreciation: null,
-    projectGrossYield: null,
-    projectNetYield: null,
-    tokens: null,
     tokenSymbol: "",
+    noOfTokens: null,
     preferredCurrency: "",
-    typeOfFinancialReturn: "",
   });
 
   const imageSpecificData = {
@@ -115,8 +104,8 @@ const SubmitPropertyForm = (props) => {
   const makeApiRequest = async (formData) => {
     console.log("Helloooo");
     console.log(formData);
-    await axios.post("http://localhost:8000/submitProperty", { ...formData });
-    props.onSuccessfulSubmission(formData);
+    await axios.post("http://localhost:8000/submitUser", { ...formData });
+    // props.onSuccessfulSubmission();
     props.showModal();
     console.log("Form Submitted", formData); //backend request
   };
@@ -161,21 +150,8 @@ const SubmitPropertyForm = (props) => {
   }, [windowWidth, currentCity]);
 
   const steps = [
-    <SelectCity
-      next={handleNextStep}
-      data={data}
-      backgroundImageChange={handleBackgroundImageChange}
-    />,
-    <SelectNeighborhood
-      next={handleNextStep}
-      prev={handlePrevStep}
-      data={data}
-    />,
-    <PropertyAddress next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <SelectApartment next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <SelectRooms next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <PersonalDetails next={handleNextStep} prev={handlePrevStep} data={data} />,
-    <FinancialDetails
+    <PersonalInfo next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <FinancialPreferences
       next={handleNextStep}
       prev={handlePrevStep}
       data={data}
@@ -237,4 +213,4 @@ const SubmitPropertyForm = (props) => {
   );
 };
 
-export default SubmitPropertyForm;
+export default InvestorForm;

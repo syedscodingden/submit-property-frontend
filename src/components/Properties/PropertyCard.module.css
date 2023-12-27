@@ -1,0 +1,99 @@
+.propertyCard {
+  border: 1.5px solid #002244;
+  border-radius: 5px;
+  color: #002244;
+  cursor: pointer;
+  max-height: 50rem;
+  overflow: hidden;
+}
+
+.imageCard {
+  max-height: 230px;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.topLeft {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.topRight {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.propertyTitle {
+  padding-left: 4rem;
+  padding-top: 1rem;
+}
+
+.propertyCardDetails {
+  color: #002244;
+  padding: 0.3rem;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.propertyCardDetailsKey {
+  font-weight: 500;
+}
+
+.propertyCardDetailsValue {
+  padding-right: 1.5rem;
+}
+
+.propertyPrice1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.propertyPrice2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.propertLocation {
+  padding-left: 4rem;
+  padding-bottom: 1.5rem;
+}
+
+.locationText {
+  font-size: 17px;
+  padding-top: 1rem;
+  font-weight: 500;
+  padding-left: 0.5rem;
+}
+
+.tokensRemaining {
+  padding-left: 4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.buyPropertyButton {
+  padding: 0.2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.detailsContainer {
+  max-height: 40rem;
+  margin-bottom: 1rem;
+}

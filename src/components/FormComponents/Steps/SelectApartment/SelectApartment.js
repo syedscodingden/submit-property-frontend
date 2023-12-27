@@ -1,37 +1,42 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
-import classes from "./SelectRooms.module.css";
 import Button from "@mui/material/Button";
 import * as Yup from "yup";
+import classes from "../SelectRooms/SelectRooms.module.css";
 
-export default function SelectRooms(props) {
-  const roomOptions = [
+export default function SelectApartment(props) {
+  const typeOfApartmentOptions = [
     { key: "Studio", value: "Studio" },
-    { key: "1", value: "1" },
-    { key: "2", value: "2" },
-    { key: "3", value: "3" },
+    { key: "Apartment", value: "Apartment" },
+    { key: "Villa", value: "Villa" },
+    { key: "Mansion", value: "Mansion" },
   ];
 
-  const [noOfRooms, setNoOfRooms] = useState(props.data.noOfRooms);
+  const [typeOfApartment, setTypeOfApartment] = useState(
+    props.data.typeOfApartment
+  );
   const [error, setError] = useState(false);
 
   const formik = useFormik({
     initialValues: {
-      noOfRooms: props.data.noOfRooms,
+      typeOfApartment: props.data.typeOfApartment,
     },
     validationSchema: Yup.object({
-      noOfRooms: Yup.string().matches(/.*\d/, "Should contain only digits"),
+      typeOfApartment: Yup.string(),
     }),
     onSubmit: (values) => {
-      console.log("valuess", values.noOfRooms);
-      console.log("state", noOfRooms);
-      if (noOfRooms === "" && values.noOfRooms === "") {
+      console.log("valuess", values.typeOfApartment);
+      console.log("state", typeOfApartment);
+      if (typeOfApartment === "" && values.typeOfApartment === "") {
         setError(true);
         return;
       }
       props.next({
         ...props.data,
-        noOfRooms: values.noOfRooms === "" ? noOfRooms : values.noOfRooms,
+        typeOfApartment:
+          values.typeOfApartment === ""
+            ? typeOfApartment
+            : values.typeOfApartment,
       });
       setError(false);
     },
@@ -39,8 +44,8 @@ export default function SelectRooms(props) {
 
   const handleSelectTypeOfApartment = (option) => {
     setError(false);
-    setNoOfRooms(option);
-    formik.values.noOfRooms = "";
+    setTypeOfApartment(option);
+    formik.values.typeOfApartment = "";
   };
 
   // useEffect(() => )
@@ -49,15 +54,15 @@ export default function SelectRooms(props) {
     <form onSubmit={formik.handleSubmit}>
       <div className={classes.selectRooms}>
         <div id="my-room-group" className={classes.roomTitle}>
-          5. How many bedrooms does the property have ?
+          4. What is the type of your property ?
         </div>
         <div role="group" className={classes.roomOptionsGroup}>
-          {roomOptions.map((roption) => {
+          {typeOfApartmentOptions.map((roption) => {
             return (
               <div
                 key={roption.key}
                 className={
-                  noOfRooms === roption.value
+                  typeOfApartment === roption.value
                     ? classes.selectedRoomOption
                     : classes.roomOption
                 }
@@ -66,7 +71,7 @@ export default function SelectRooms(props) {
                 }}
               >
                 <span>{roption.value}</span>
-                {noOfRooms === roption.value && (
+                {typeOfApartment === roption.value && (
                   <span className={classes.selectedCheck}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -84,23 +89,27 @@ export default function SelectRooms(props) {
             );
           })}
           <input
-            id="noOfRooms"
-            name="noOfRooms"
+            id="typeOfApartment"
+            name="typeOfApartment"
             type="text"
-            placeholder="No Of Rooms, if more than three...."
+            placeholder="Type Of property, if not mentioned...."
             onChange={(e) => {
               formik.handleChange(e);
-              setNoOfRooms("");
+              setTypeOfApartment("");
             }}
-            value={formik.values.noOfRooms}
+            value={formik.values.typeOfApartment}
             className={classes.inputNoOfRooms}
             onBlur={formik.handleBlur}
           />
-          {formik.touched.noOfRooms && formik.errors.noOfRooms ? (
-            <p className={classes.error}>{formik.errors.noOfRooms}</p>
+          {formik.touched.typeOfApartment && formik.errors.typeOfApartment ? (
+            <p className={classes.error}>{formik.errors.typeOfApartment}</p>
           ) : null}
         </div>
-        {error && <p className={classes.error}>Please select no of bedrooms</p>}
+        {error && (
+          <p className={classes.error}>
+            Please select Type Of Property or enter your own
+          </p>
+        )}
         <div style={{ display: "flex", justifyContent: "flex-end" }}>
           <Button
             variant="contained"

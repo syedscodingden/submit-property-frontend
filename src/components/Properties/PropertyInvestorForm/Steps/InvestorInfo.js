@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useFormik } from "formik";
-import classes from "./PersonalDetails.module.css";
+import classes from "./InvestorInfo.module.css";
 import * as Yup from "yup";
 import Button from "@mui/material/Button";
 import ReactFlagsSelect from "react-flags-select";
 
-const PersonalDetails = (props) => {
+const InvestorInfo = (props) => {
   const [country, setCountry] = useState(props.data.countryCode);
   const [countryCodeError, setCountryCodeError] = useState(false);
 
@@ -48,7 +48,7 @@ const PersonalDetails = (props) => {
     <form noValidate onSubmit={formik.handleSubmit}>
       <div className={classes.personalDetails}>
         <div id="my-radio-group" className={classes.personalDetailsTitle}>
-          5. Let’s get to know each other
+          1. Let’s get to know each other
         </div>
         <div className={classes.personalDetailsContainer}>
           <label className={classes.personalInfolabel}>First Name*</label>
@@ -181,4 +181,4 @@ const PersonalDetails = (props) => {
   );
 };
 
-export default PersonalDetails;
+export default InvestorInfo;

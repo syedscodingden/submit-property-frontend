@@ -1,0 +1,185 @@
+.modal {
+    position: fixed;
+    top: 15vh;
+    left: 5%;
+    width: 200%;
+    z-index: 100;
+    overflow: hidden;
+  }
+  
+  .logo {
+    /* border: 2px solid blue; */
+    height: 1.7rem;
+    width: 10rem;
+    cursor: pointer;
+  }
+  
+  .header {
+    background: #89cff0;
+    height: 0.2rem;
+  }
+  
+  .complete {
+    background: #00308f;
+    height: 0.2rem;
+  }
+  
+  .header h2 {
+    margin: 0;
+    color: white;
+  }
+  
+  .formBackground {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.5)
+      ),
+      url("../../assets/step1img.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: cover 10px;
+    background-attachment: fixed;
+  }
+  
+  .actions {
+    padding: 1rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  @media (max-width: 319px) {
+    .modal {
+      left: calc(15% - 2rem);
+      width: 16rem;
+    }
+    .formBackground {
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0.7)
+        ),
+        url("../../assets/dummy4.jpg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: cover;
+      background-attachment: fixed;
+    }
+  
+    .common {
+      position: sticky;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      width: 14rem;
+    }
+    .content {
+      font-weight: 600;
+      overflow: auto;
+      overflow-x: hidden;
+      height: 260px;
+    }
+  }
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    .modal {
+      left: calc(50% - 10rem);
+      width: 20rem;
+    }
+    .formBackground {
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0.7)
+        ),
+        url("../../assets/dummy4.jpg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: cover 10px;
+      background-attachment: fixed;
+    }
+    .common {
+      /* position: fixed; */
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      width: 18rem;
+    }
+    .content {
+      font-weight: 600;
+      overflow: auto;
+      overflow-x: hidden;
+      height: 350px;
+    }
+  }
+  
+  @media (min-width: 481px) and (max-width: 1200px) {
+    .modal {
+      left: calc(38% - 10rem);
+      width: 30rem;
+      overflow: hidden;
+      overflow-x: hidden;
+      height: 480px;
+    }
+    .formBackground {
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0.7)
+        ),
+        url("../../assets/dummy2.jpg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .common {
+      position: sticky;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      width: 28rem;
+    }
+    .content {
+      color: black;
+      font-weight: 600;
+      overflow: auto;
+      overflow-x: hidden;
+      height: 480px;
+    }
+  }
+  
+  @media (min-width: 1201px) {
+    .modal {
+      left: calc(20% - 10rem);
+      width: 65rem;
+    }
+    .formBackground {
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0.6),
+          rgba(255, 255, 255, 0.7)
+        ),
+        url("../../assets/step1img.jpg");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: cover;
+      background-attachment: fixed;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    .common {
+      position: sticky;
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem;
+      width: 63rem;
+    }
+    .content {
+      color: black;
+      font-weight: 600;
+      overflow: auto;
+      height: 430px;
+      overflow-x: hidden;
+      padding: 1.5rem;
+    }
+  }
+  

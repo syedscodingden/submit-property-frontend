@@ -15,7 +15,7 @@ const SelectNeighborhood = (props) => {
     { key: "Option 8", value: "Dubai Creek" },
     { key: "Option 9", value: "Business Bay" },
     { key: "Option 10", value: "Dubai Water Canal" },
-  ];
+  ]; // make it dynamic for each city
   const [selectedNeighborhood, setSelectedNeighborhood] = useState(
     props.data.area
   );

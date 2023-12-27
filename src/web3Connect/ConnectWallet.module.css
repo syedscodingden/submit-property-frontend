@@ -1,0 +1,10 @@
+.connectWallet {
+  background-color: #002244;
+  color: #f9f9f9;
+  border: none;
+  border-radius: 10px;
+  height: 2rem;
+  width: 9rem;
+  font-weight: 500;
+  cursor: pointer;
+}
