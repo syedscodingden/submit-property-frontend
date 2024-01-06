@@ -24,6 +24,7 @@ const SubmitPropertyForm = (props) => {
     phoneNumber: "",
     email: "",
     pricePerSqFt: null,
+    areaInSqFt: null,
     annualizedReturn: null,
     annualizedAppreciation: null,
     projectGrossYield: null,

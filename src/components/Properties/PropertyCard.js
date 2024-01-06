@@ -19,6 +19,8 @@ function PropertyCard({ data, walletAddress }) {
     setShowInvestorModal(true);
   };
 
+  const pricePerSqFt = data.totalPrice / data.areaInSqFt;
+
   return (
     <div className={classes.propertyCard}>
       <div className={classes.container}>
@@ -44,10 +46,17 @@ function PropertyCard({ data, walletAddress }) {
             : " Apartment"}
         </h4>
         <div className={classes.propertyPrice1}>
-          <h5>AED 150,000 {"  "}</h5>
+          <h5>
+            {data.preferredCurrency}
+            {"  "}
+            {data.totalPrice.toLocaleString("en-US")} {"  "}
+          </h5>
         </div>
         <div className={classes.propertyPrice2}>
-          <h5>AED {data.pricePerSqFt} / Per Sqft</h5>
+          <h5>
+            {data.preferredCurrency}
+            {"  "} {pricePerSqFt} / Per Sqft
+          </h5>
         </div>
         <div className={classes.propertyCardDetails}>
           <div className={classes.propertyCardDetailsKey}>

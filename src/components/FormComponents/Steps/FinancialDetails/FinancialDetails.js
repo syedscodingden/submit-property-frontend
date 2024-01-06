@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Button from "@mui/material/Button";
-import ReactFlagsSelect from "react-flags-select";
 
 function FinancialDetails(props) {
   const formik = useFormik({
     initialValues: {
-      pricePerSqFt: props.data.pricePerSqFt,
+      // pricePerSqFt: props.data.pricePerSqFt,
+      totalPrice: props.data.totalPrice,
+      areaInSqFt: props.data.areaInSqFt,
       annualizedReturn: props.data.annualizedReturn,
       annualizedAppreciation: props.data.annualizedAppreciation,
       projectGrossYield: props.data.projectGrossYield,
@@ -19,7 +20,8 @@ function FinancialDetails(props) {
       typeOfFinancialReturn: props.data.typeOfFinancialReturn,
     },
     validationSchema: Yup.object({
-      pricePerSqFt: Yup.number().required("Required"),
+      totalPrice: Yup.number().required("Required"),
+      areaInSqFt: Yup.number().required("Required"),
       annualizedReturn: Yup.number().required("Required"),
       annualizedAppreciation: Yup.number().required("Required"),
       projectGrossYield: Yup.number().required("Required"),
@@ -36,7 +38,8 @@ function FinancialDetails(props) {
       props.next(
         {
           ...props.data,
-          pricePerSqFt: values.pricePerSqFt,
+          totalPrice: values.totalPrice,
+          areaInSqFt: values.areaInSqFt,
           annualizedReturn: values.annualizedReturn,
           annualizedAppreciation: values.annualizedAppreciation,
           projectGrossYield: values.projectGrossYield,
@@ -61,23 +64,43 @@ function FinancialDetails(props) {
           6. Let’s us know about the financial details of your property
         </div>
         <div className={classes.personalDetailsContainer}>
-          <label className={classes.personalInfolabel}>Price Per SqFt*</label>
+          <label className={classes.personalInfolabel}>Total Price*</label>
           <input
-            id="pricePerSqFt"
-            name="pricePerSqFt"
+            id="totalPrice"
+            name="totalPrice"
             type="number"
-            placeholder="Price per sqft...."
+            placeholder="Total Price...."
             onChange={formik.handleChange}
-            value={formik.values.pricePerSqFt}
+            value={formik.values.totalPrice}
             className={
-              formik.touched.pricePerSqFt && formik.errors.pricePerSqFt
+              formik.touched.totalPrice && formik.errors.totalPrice
                 ? classes.errorInputPersonalDetails
                 : classes.inputPersonalDetails
             }
             onBlur={formik.handleBlur}
           />
-          {formik.touched.pricePerSqFt && formik.errors.pricePerSqFt ? (
-            <p className={classes.error}>{formik.errors.pricePerSqFt}</p>
+          {formik.touched.totalPrice && formik.errors.totalPrice ? (
+            <p className={classes.error}>{formik.errors.totalPrice}</p>
+          ) : null}
+        </div>
+        <div className={classes.personalDetailsContainer}>
+          <label className={classes.personalInfolabel}>Area In SqFt*</label>
+          <input
+            id="areaInSqFt"
+            name="areaInSqFt"
+            type="number"
+            placeholder="Area In Sqft...."
+            onChange={formik.handleChange}
+            value={formik.values.areaInSqFt}
+            className={
+              formik.touched.areaInSqFt && formik.errors.areaInSqFt
+                ? classes.errorInputPersonalDetails
+                : classes.inputPersonalDetails
+            }
+            onBlur={formik.handleBlur}
+          />
+          {formik.touched.areaInSqFt && formik.errors.areaInSqFt ? (
+            <p className={classes.error}>{formik.errors.areaInSqFt}</p>
           ) : null}
         </div>
 
